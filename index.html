@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邱唯婷 Weiwei Chiu — 資深產品設計師</title>
+<meta name="description" content="邱唯婷 Weiwei Chiu｜資深產品設計師。五年產品設計經驗，遊戲橘子 hidol 偶像／粉絲社群平台核心設計成員。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-mute: #8a8a8a;
+    --paper: #fafaf7;
+    --line: #e3e3df;
+    --accent: #1a1a1a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 60px; }
+
+  body {
+    font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Top Nav */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 250, 247, 0.85);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topnav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 52px;
+  }
+
+  .topnav-brand {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  .topnav-links {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .topnav-links::-webkit-scrollbar { display: none; }
+
+  .topnav-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .topnav-links a:hover {
+    color: var(--ink);
+  }
+
+  .topnav-links a.active {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 48px 120px;
+  }
+
+  /* Header */
+  header {
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .header-text {
+    min-width: 0;
+  }
+
+  .portrait {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #efefea;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+    filter: grayscale(15%) contrast(1.02);
+  }
+
+  .name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .name .en {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--ink-mute);
+    font-size: 28px;
+    margin-left: 12px;
+    letter-spacing: 0;
+  }
+
+  .role {
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  .contact a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .contact a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 64px;
+  }
+
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.2px;
+  }
+
+  h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: -0.1px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .lead {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  .lead em {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 600;
+    background: linear-gradient(transparent 62%, rgba(0,0,0,0.08) 62%);
+    padding: 0 2px;
+  }
+
+  /* Strengths */
+  .strengths {
+    display: grid;
+    gap: 0;
+  }
+
+  .strength {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .strength:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .strength-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--ink-mute);
+    padding-top: 8px;
+  }
+
+  .strength-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+    line-height: 1.35;
+  }
+
+  .strength-title .cn {
+    font-weight: 500;
+    color: var(--ink-soft);
+    font-size: 18px;
+    margin-left: 8px;
+  }
+
+  .strength-quote {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .strength-cases {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.3px;
+  }
+
+  .strength-cases a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .strength-cases a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  /* Experience */
+  .job {
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .job:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .job-compact {
+    padding: 18px 0;
+  }
+
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .company {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+  }
+
+  .company-sm {
+    font-size: 18px;
+  }
+
+  .period {
+    font-size: 14px;
+    color: var(--ink-mute);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .dept {
+    font-size: 14px;
+    color: var(--ink-mute);
+    margin-bottom: 4px;
+  }
+
+  .titles {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  .title-line {
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .note {
+    font-size: 13px;
+    color: var(--ink-mute);
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  /* Projects */
+  .project {
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .project:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .project-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: -0.1px;
+  }
+
+  .project-subtitle {
+    font-size: 13px;
+    color: var(--ink-mute);
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+  }
+
+  .project-body {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  .metrics {
+    list-style: none;
+    padding: 0;
+  }
+
+  .metrics li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  .metrics li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--ink-mute);
+    font-weight: 500;
+  }
+
+  .metrics strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Skills */
+  .skill-group {
+    margin-bottom: 20px;
+  }
+
+  .skill-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 6px;
+  }
+
+  .skill-content {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* Traits */
+  .traits {
+    list-style: none;
+    padding: 0;
+  }
+
+  .traits li {
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .traits li:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .traits strong {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    color: var(--ink);
+    margin-right: 8px;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.5px;
+  }
+
+  /* Print button (no-print) */
+  .print-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 12px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .print-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  }
+
+  .portrait-placeholder::before {
+    content: "Photo";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .topnav-inner {
+      padding: 0 20px;
+      gap: 16px;
+      height: 48px;
+    }
+    .topnav-brand { font-size: 13px; }
+    .topnav-links { gap: 16px; }
+    .topnav-links a { font-size: 10px; letter-spacing: 1.2px; }
+    html { scroll-padding-top: 56px; }
+    .container { padding: 48px 24px 80px; }
+    header {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .portrait {
+      width: 96px;
+      height: 96px;
+      order: -1;
+    }
+    .name { font-size: 32px; }
+    .name .en { font-size: 20px; margin-left: 8px; display: inline-block; }
+    .company { font-size: 19px; }
+    h2 { font-size: 21px; }
+    .strength {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .strength-title { font-size: 19px; }
+    .strength-title .cn { font-size: 16px; margin-left: 0; display: block; margin-top: 2px; }
+    .print-btn {
+      bottom: 16px;
+      right: 16px;
+      padding: 10px 16px;
+      font-size: 12px;
+    }
+  }
+
+  /* Print */
+  @media print {
+    body { background: white; font-size: 11pt; line-height: 1.5; }
+    .container { padding: 0; max-width: 100%; }
+    .topnav { display: none; }
+    .print-btn { display: none; }
+    section { margin-bottom: 24px; page-break-inside: avoid; }
+    .project { padding: 14px 0; page-break-inside: avoid; }
+    header { margin-bottom: 24px; padding-bottom: 16px; gap: 24px; }
+    .portrait { width: 90px; height: 90px; }
+    .name { font-size: 28px; }
+    .name .en { font-size: 18px; }
+    a { color: var(--ink); }
+    footer { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="主要導覽">
+  <div class="topnav-inner">
+    <a href="#top" class="topnav-brand">邱唯婷 · Weiwei</a>
+    <div class="topnav-links">
+      <a href="#about">About</a>
+      <a href="#strengths">Strengths</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#how-i-work">How I Work</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container" id="top">
+
+  <header>
+    <div class="header-text">
+      <h1 class="name">邱唯婷<span class="en">Weiwei Chiu</span></h1>
+      <div class="role">資深產品設計師 / Senior Product Designer</div>
+      <div class="contact">
+        <a href="mailto:weiting1015@gmail.com">weiting1015@gmail.com</a>
+        <span>Taipei, Taiwan</span>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="profile.jpg" alt="邱唯婷 Weiwei Chiu" onerror="this.style.display='none'; this.parentElement.classList.add('portrait-placeholder');">
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="section-label">About</div>
+    <p class="lead">
+      我有 4 年企劃經驗與 11 年設計經驗——<em>加起來剛好是 PJM 這個職務需要的兩條腿</em>：一條負責拆問題、設目標，一條負責讓解法真的落地。社會學底子讓我習慣從人和情境理解問題；五年前端實作讓我能與工程語言互通，看設計稿會直覺評估可實作性；近五年在 hidol 獨立負責多個核心功能模組，完整走過從問題定義、策略規劃、設計到上線追蹤的閉環。
+    </p>
+    <p class="lead">
+      這五年練熟的是一條閉環——從接到模糊需求開始拆假議題、找真痛點，把抽象的策略指令翻譯成可評估的目標與解法，再到上線後用數據判斷該動還是該收。跨職能協作（PM、研發、營運、研究、數據）是日常；最近半年也在實驗用 AI 加速工作流程，把「設計、原型、實作交付」串成單人能跑完的端到端流程。
+    </p>
+  </section>
+
+  <section id="strengths">
+    <div class="section-label">Strengths</div>
+    <div class="strengths">
+
+      <div class="strength">
+        <div class="strength-num">01</div>
+        <div>
+          <div class="strength-title">Problem Framing First<span class="cn">先拆解問題，再想解法</span></div>
+          <div class="strength-quote">「先釐清拆解問題、找出核心關鍵，再想解法，遠比直接解決問題成本來得低。」</div>
+          <div class="strength-cases">案例：<a href="#proj-post-flow">發文流程優化</a> · <a href="#proj-concepts">嗨豆感應器 / 共創應援卡</a></div>
+        </div>
+      </div>
+
+      <div class="strength">
+        <div class="strength-num">02</div>
+        <div>
+          <div class="strength-title">From Concept to Outcome<span class="cn">從概念到落地，再用數據判斷</span></div>
+          <div class="strength-quote">「能將創意概念轉化為實際落地執行項目，並持續觀察成效、發現問題判斷評估。」</div>
+          <div class="strength-cases">案例：<a href="#proj-spotlight">Spotlight 圖片標註</a> · <a href="#proj-moment">Moment 紀錄功能</a> · <a href="#proj-follow">關注用戶功能</a></div>
+        </div>
+      </div>
+
+      <div class="strength">
+        <div class="strength-num">03</div>
+        <div>
+          <div class="strength-title">Ambiguity → Strategy<span class="cn">把抽象指令轉化為清晰策略</span></div>
+          <div class="strength-quote">「從最抽象的指令分析整理，轉化為可供評估的策略目標、成功指標與設計解法——比先想怎麼做漂亮的介面來得重要。」</div>
+          <div class="strength-cases">案例：<a href="#proj-v3">hidol App v3.0</a> · <a href="#proj-web">hidol Web 0 → 1</a></div>
+        </div>
+      </div>
+
+      <div class="strength">
+        <div class="strength-num">04</div>
+        <div>
+          <div class="strength-title">AI-Augmented Workflow<span class="cn">用 AI 加速工作流程</span></div>
+          <div class="strength-quote">「設計工作流已大量導入 AI 協作（轉場動效、動畫產出），個人專案中持續實驗 Figma Make + Bolt 的端到端 AI 工作流。」</div>
+          <div class="strength-cases">案例：<a href="#proj-ai">AI 協作於設計流程</a> · <a href="#proj-ai">個人專案：勾毛線 app 進行中</a></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-label">Experience</div>
+
+    <div class="job">
+      <div class="experience-header">
+        <div class="company">遊戲橘子 Gamania</div>
+        <div class="period">2020 — 2026</div>
+      </div>
+      <div class="dept">橘子集團總部 ‧ 產品規劃與體驗設計部</div>
+      <div class="titles">前端網頁切版設計 → UI/UX 產品設計師 → 資深產品設計師（資深主任）</div>
+      <p>主要負責產品為 <strong>hidol</strong>（偶像／粉絲互動社群平台），跨 Web 與 App 兩端。從前端切版起步，逐步擴展到完整的 UX 流程設計與跨職能溝通；後期以資深產品設計師角色，獨立負責 hidol 多個核心功能模組的概念、設計、開發溝通到上線追蹤，並支援設計內部的方法整理（design system、訪談洞察）與營運廣宣協作。</p>
+      <div class="note">2026 因公司組織調整、部門裁撤而離開。</div>
+    </div>
+
+    <div class="job">
+      <div class="experience-header">
+        <div class="company">宏林跨媒體整合行銷</div>
+        <div class="period">2014 — 2019</div>
+      </div>
+      <div class="dept">設計部</div>
+      <div class="titles">網頁前端設計師（Frontend Web Designer）</div>
+      <p>五年時間負責多家客戶的活動網站、品牌官網、行銷專頁的視覺切版與互動實作（HTML / CSS / JavaScript）。從接設計稿到上線交付一手包辦，跨設計、開發、業務、客戶四方溝通，培養出對「設計能不能被實作」的直覺——這也是後來轉做產品設計時最直接受用的本錢。</p>
+    </div>
+
+    <div class="job job-compact">
+      <div class="experience-header">
+        <div class="company company-sm">Earlier · 2010 — 2014</div>
+        <div class="period">行銷與企劃</div>
+      </div>
+      <p style="margin-bottom: 0; font-size: 14.5px; color: var(--ink-soft);">
+        宏林跨媒體整合行銷 · 行銷企劃專員（2013–2014）／就是愛創意 · 行銷企劃專員（2012–2013）／三重社區大學 · 課程企劃專員（2010–2012）。四年跨行銷、電商、教育的企劃經驗，打下與業務、客戶、學員溝通的底子，也是後來能把營運需求快速轉成設計命題的源頭。
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-label">Selected Projects</div>
+
+    <div class="project" id="proj-v3">
+      <div class="project-title">hidol App v3.0</div>
+      <div class="project-subtitle">Ambiguity → Strategy｜2025 · 未上線（部門裁撤）</div>
+      <p class="project-body">100% 由我規劃的版本。因應策略從 IP 帶 C 轉型為 C 帶 C，整條故事用 Moment 為核心串起價值主張「你的熱愛值得被紀錄」。從最抽象的策略指令出發，獨立完成：目標客群（15–25 歲 Gen Z）、主要場景（紀錄你的當下喜愛）、關鍵功能與故事流程（觀看 → 喜愛觸發行動 → 散播喜愛）、回扣最小關鍵指標（點擊查看詳細頁）。</p>
+      <ul class="metrics">
+        <li>從「抽象指令」到「可評估的策略目標、成功指標、設計解法」的完整翻譯——比先想介面長相重要</li>
+        <li>後續因部門裁撤停止，但完整脈絡與規劃文件可重現</li>
+      </ul>
+    </div>
+
+    <div class="project" id="proj-post-flow">
+      <div class="project-title">發文流程優化</div>
+      <div class="project-subtitle">Problem Framing First｜2025.4.28 上線</div>
+      <p class="project-body">起點是模糊的需求：「發文好擠東西擺不下、icon 看不懂，能不能順便優化？」我沒接這個框架，先拆下去——發現真正問題是「發文模組不斷擴充、版面擴充性不足」，原本提出的「用戶學習成本高」當時證據不足，是假議題。改從「用戶慣用發文模組 vs 特色模組」的方向切入。</p>
+      <ul class="metrics">
+        <li><strong>最低成本、最高效益</strong>的調整：不重建模組，只重整層次</li>
+        <li>先釐清拆解問題、找出核心關鍵，再想解法——遠比直接接需求動手成本低</li>
+      </ul>
+    </div>
+
+    <div class="project" id="proj-spotlight">
+      <div class="project-title">Spotlight 圖片標註功能</div>
+      <div class="project-subtitle">From Concept to Outcome｜2025.8.18 上線</div>
+      <p class="project-body">產品策略 IP 帶 C 時期，目標激起用戶更多互動。負責把「圖片標註」這個概念收斂成可落地的設計，定義成功指標為「點擊查看 Spotlight」與「留言互動」，上線後持續追蹤。</p>
+      <ul class="metrics">
+        <li>上線後<strong>平均互動次數提升 39.85%</strong>，<strong>互動轉化率 72%</strong>——成功命中核心用戶需求</li>
+        <li>10 月觀察到 Spotlight 貼文點擊數是一般貼文的 2 倍多，但回覆數不如一般留言。判斷初衷目標（注意、互動、內容數）已達成，<strong>先紀錄不進優化</strong>——避免為了優化而優化</li>
+      </ul>
+    </div>
+
+    <div class="project" id="proj-ai">
+      <div class="project-title">AI 協作於設計工作流程</div>
+      <div class="project-subtitle">AI-Augmented Workflow｜進行中</div>
+      <p class="project-body">目前設計工作中已導入 AI 協作——例如轉場動態、動效原型生成。以往這類工作需要自己手刻 prototype 且不確定能否被開發實踐，改用 AI 後大部分時間花在 tune prompt，但<strong>整體比自己串 prototype 減少將近一半時間</strong>。個人專案中也持續實驗：假日用 Figma Make 結合 Bolt 做一支給自己用的勾毛線專用 App，跨設計工具與 to-code 工具的端到端 AI 工作流驗證。</p>
+    </div>
+
+    <div class="project" id="proj-moment">
+      <div class="project-title">Moment 紀錄功能</div>
+      <div class="project-subtitle">From Concept to Outcome｜2025 上線</div>
+      <p class="project-body">定位為「不同於以往的全新紀錄體驗」，負責 Moment 新增與編輯流程。上線後主動拆解漏斗，找出首頁→紀錄起始頁轉化偏低、拍照→匯入照片到編輯頁流失近半等關鍵問題點，作為下一輪優化依據。</p>
+      <ul class="metrics">
+        <li>上線 10 天累積 <strong>6,075 篇</strong> Moment</li>
+      </ul>
+    </div>
+
+    <div class="project" id="proj-follow">
+      <div class="project-title">關注用戶功能（App / Web）</div>
+      <div class="project-subtitle">From Concept to Outcome｜2025 上線</div>
+      <p class="project-body">從「用戶關注用戶以自主獲取優質內容」的命題出發，獨立負責設計，與 PM 緊密合作。</p>
+      <ul class="metrics">
+        <li>上線後<strong>個人頁進入比例提升至 36 – 43%</strong>，有效帶動探索行為</li>
+        <li>「我關注的人建立的新貼文」通知<strong>平均互動率達 45%</strong></li>
+      </ul>
+    </div>
+
+    <div class="project" id="proj-web">
+      <div class="project-title">hidol Web 0 → 1</div>
+      <div class="project-subtitle">Ambiguity → Strategy｜2025 上線</div>
+      <p class="project-body">與另一位設計師共同完成 hidol Web 訪客模式版本，負責探索、我的、通知、全域交互四個模塊。Web 版的策略目標是讓內容更容易被擴散、降低入坑門檻。同期建立 hidol Web Design System，協助後續設計與開發共用一致的元件規範。</p>
+      <ul class="metrics">
+        <li>上線後<strong>週平均流量穩定在 300 – 600</strong></li>
+        <li>有新粉絲團入駐或重要發文時 Web 端瀏覽人數明顯上升，驗證「Web 作為內容擴散入口」的初期策略方向</li>
+      </ul>
+    </div>
+
+    <div class="project" id="proj-concepts">
+      <div class="project-title">概念設計：嗨豆感應器、共創應援卡</div>
+      <div class="project-subtitle">Problem Framing First｜2024</div>
+      <p class="project-body">兩個皆為從點子被選中後的收整、萃取與設計轉化——分別探索用「心理測驗」建立粉絲與偶像連結（嗨豆感應器），以及用「共創」凝聚粉絲、強化偶像連結（共創應援卡）。完成完整概念設計與內部 Demo 後，因解法路徑與當時量能不對等，<strong>主動踩煞車不上線</strong>——協助組織判斷投入與否，避免硬上的長期成本。</p>
+    </div>
+
+    <div class="project">
+      <div class="project-title">App 管理員檢舉審核 ＋ Loading 體驗優化</div>
+      <div class="project-subtitle">產品健康度與微體驗｜2025</div>
+      <p class="project-body">設計管理員端的檢舉審核流程，協助減輕產品端內容審控成本、提升社群自治能力；同步從「檔案上傳的等待感」這個小體驗痛點切入，導入 Progress Bar 並定義其使用時機，改善用戶等待時的焦慮感。</p>
+    </div>
+
+    <div class="project">
+      <div class="project-title">設計內部與營運支援</div>
+      <div class="project-subtitle">2024</div>
+      <p class="project-body">整理三位個站應援者訪談、提煉洞察並進行內部分享；以設計協助營運與招募溝通（hidol 徵才廣宣、新手任務 Event Page、創作者關鍵回顧 EDM）；將法務需求落地為產品端的合規體驗（條款更新提醒）。</p>
+    </div>
+
+  </section>
+
+  <section id="skills">
+    <div class="section-label">Skills</div>
+
+    <div class="skill-group">
+      <div class="skill-label">設計能力</div>
+      <div class="skill-content">產品設計（App / Web 全流程）、UX 流程設計、概念設計與收斂、Prototype、Design System 建立、用戶訪談整理與洞察萃取、視覺與切版基礎</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">工具</div>
+      <div class="skill-content">Figma（主力）、原型工具、前端切版（HTML / CSS）基礎</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">協作</div>
+      <div class="skill-content">跨職能溝通（PM、研發、營運、研究、數據）、用戶換位思考、上線後數據追蹤與迭代提案</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">正在強化</div>
+      <div class="skill-content">AI 協作（用於加速設計交付與解法探索）、把命題拆得更大、在過程中提出更清晰的主張與判斷依據</div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-label">Education</div>
+    <div class="job">
+      <div class="experience-header">
+        <div class="company company-sm">國立臺灣師範大學</div>
+        <div class="period">設計研究所 · 修業</div>
+      </div>
+      <div class="dept">於設計領域進修，後因個人生涯規劃未完成學位</div>
+    </div>
+    <div class="job">
+      <div class="experience-header">
+        <div class="company company-sm">東吳大學</div>
+        <div class="period">社會學系 · 學士</div>
+      </div>
+      <div class="dept">社會學的訓練讓「從人和情境出發理解問題」成為長期工作底色</div>
+    </div>
+  </section>
+
+  <section id="how-i-work">
+    <div class="section-label">How I Work</div>
+    <ul class="traits">
+      <li><strong>換位思考。</strong>習慣跳脫設計師視角，從用戶處境出發理解問題。</li>
+      <li><strong>觀察力。</strong>能在過程中抓住任何線索並延展成設計判斷。</li>
+      <li><strong>中肯協作。</strong>與夥伴合作時專注聆聽、給予務實回饋、尊重對方決定。</li>
+      <li><strong>品牌敏感度。</strong>理解產品的感性面，會主動嘗試把品牌元素融入產品。</li>
+      <li><strong>被熱忱驅動。</strong>在意團隊的「生命流動」，被勇於嘗試、不怕失敗的氣氛吸引。</li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2026 Weiwei Chiu · Designed and coded with care
+  </footer>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">列印 / 存成 PDF</button>
+
+<script>
+  // Scroll-spy: highlight nav link of the section currently in view
+  (function () {
+    var sections = document.querySelectorAll('main section[id], section[id]');
+    var navLinks = document.querySelectorAll('.topnav-links a');
+    var linkMap = {};
+    navLinks.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      if (id) linkMap[id] = a;
+    });
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var id = entry.target.id;
+        if (!linkMap[id]) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (a) { a.classList.remove('active'); });
+          linkMap[id].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { io.observe(s); });
+  })();
+</script>
+
+</body>
+</html>
