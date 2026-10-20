@@ -93,7 +93,7 @@ window.WORKS = [
     role: "插畫、包裝設計、美術指導"
   },
   {
-    title: "趴火英雄｜Logo 與包裝", cat: "visual", client: "簡易式噴霧滅火器品牌", img: "fire-v2.jpg", thumb: "fire-thumb.jpg",
+    title: "趴火英雄｜Logo 包裝設計", cat: "visual", client: "簡易式噴霧滅火器品牌", img: "fire-v2.jpg", thumb: "fire-thumb.jpg",
     summary: "結合盾牌、家與守護之手，設計出讓人一眼感到安心的滅火器品牌識別。",
     role: "Logo 設計、包裝設計"
   },
@@ -103,12 +103,12 @@ window.WORKS = [
     role: "封面設計、內頁編排"
   },
   {
-    title: "案達人｜課程廣告", cat: "visual", year: "2020", client: "案達人", img: "banners-v2.jpg", thumb: "banners-thumb.jpg",
+    title: "文案達人｜課程廣告", cat: "visual", year: "2020", client: "文案達人", img: "banners-v2.jpg", thumb: "banners-thumb.jpg",
     summary: "為唐崇達老師的品牌文案課程打造招生廣告，以劇場與鋼筆意象呈現「品牌故事」的主題。",
     role: "廣告視覺設計"
   },
   {
-    title: "Mess Maker｜角色插畫", cat: "visual", client: "Mess Maker", img: "messmaker-v2.jpg", thumb: "messmaker-thumb.jpg",
+    title: "Mess Maker 蝦攪和｜插畫排版設計", cat: "visual", client: "Mess Maker 蝦攪和", img: "messmaker-v2.jpg", thumb: "messmaker-thumb.jpg",
     summary: "為每種口味設計個性鮮明的蝦子角色，搭配料理卡，讓產品更有記憶點。",
     role: "角色插畫、料理卡設計"
   },
@@ -118,9 +118,9 @@ window.WORKS = [
     role: "文宣設計、版面編排"
   },
   {
-    title: "商品攝影", cat: "visual", img: "photo-v2.jpg",
-    summary: "用木質與自然光營造溫暖氛圍，拍出手作點心的質感。",
-    role: "商品攝影、場景佈置"
+    title: "葡吉食品｜商品擺設修圖", cat: "visual", client: "葡吉食品", img: "photo-v2.jpg",
+    summary: "用木質與自然光營造溫暖氛圍，透過擺設與修圖呈現手作點心的質感。",
+    role: "商品擺設、修圖"
   },
   {
     title: "御蓮齋｜活動與產品廣告", cat: "visual", client: "御蓮齋", img: "yulianzhai-v2.jpg", thumb: "yulianzhai-thumb.jpg",
