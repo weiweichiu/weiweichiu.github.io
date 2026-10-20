@@ -78,7 +78,7 @@ window.WORKS = [
     role: "網頁設計、建置", tech: "WordPress、Elementor、SVGator 動畫"
   },
   {
-    title: "beanfun!｜IP 涼涼", cat: "visual", year: "2021–2023", client: "遊戲橘子 beanfun!", img: "liangliang-v2.jpg", thumb: "liangliang-thumb.jpg", confidential: true,
+    title: "bf! IP 涼涼｜IP 角色設計", cat: "visual", year: "2021–2023", client: "遊戲橘子 beanfun!", img: "liangliang-v2.jpg", thumb: "liangliang-thumb.jpg", confidential: true,
     summary: "以夜市涼圓為原型，打造來自鯨魚座 τ 星的外星生命「涼涼 Cetuly」，從角色發想延伸到 App、貼圖與周邊。",
     role: "IP 發想、比稿提案、角色故事 guidebook、繪製規範、貼圖／周邊／文博會方向監製"
   },
@@ -88,7 +88,7 @@ window.WORKS = [
     role: "廣告創意、插畫、視覺設計"
   },
   {
-    title: "生薑米糕｜CD 包裝", cat: "visual", year: "2018", client: "生薑米糕 Ginger Mi-gao", img: "cd-v2.jpg", thumb: "cd-thumb.jpg",
+    title: "生薑米糕｜CD 插畫包裝設計", cat: "visual", year: "2018", client: "生薑米糕 Ginger Mi-gao", img: "cd-v2.jpg", thumb: "cd-thumb.jpg",
     summary: "以手繪插畫打造一趟太空旅行，把專輯的故事畫進整張 CD 封套。",
     role: "插畫、包裝設計、美術指導"
   },
@@ -98,7 +98,7 @@ window.WORKS = [
     role: "Logo 設計、包裝設計"
   },
   {
-    title: "台灣茶旅｜書籍編排", cat: "visual", year: "2020", client: "Taiwan Tea", img: "tea-v2.jpg", thumb: "tea-thumb.jpg",
+    title: "台灣茶旅｜書籍主編排設計", cat: "visual", year: "2020", client: "Taiwan Tea", img: "tea-v2.jpg", thumb: "tea-thumb.jpg",
     summary: "記錄台灣茶職人的故事，從封面到內頁，用沉穩的版面呈現茶的溫度。",
     role: "封面設計、內頁編排"
   },
@@ -113,7 +113,7 @@ window.WORKS = [
     role: "角色插畫、料理卡設計"
   },
   {
-    title: "維聽助聽器｜DM", cat: "visual", client: "維聽助聽器", img: "wehear-v2.jpg", thumb: "wehear-thumb.jpg",
+    title: "維聽助聽器｜DM 編排設計", cat: "visual", client: "維聽助聽器", img: "wehear-v2.jpg", thumb: "wehear-thumb.jpg",
     summary: "用清新的綠色與親切的圖像，把助聽器的種類與選配流程說得簡單易懂。",
     role: "文宣設計、版面編排"
   },
